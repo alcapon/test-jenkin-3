@@ -21,7 +21,7 @@ pipeline {
 
     stage('SonarQubeScan') {
       steps {
-        withSonarQubeEnv 'SonarQube'
+        withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'SonarScan4.8')
         sh 'sh \'ls\''
       }
     }
