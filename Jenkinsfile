@@ -13,5 +13,11 @@ pipeline {
       }
     }
 
+    stage('Current Dir') {
+      steps {
+        sh 'pwd'
+      }
+    }
+
   }
 }
