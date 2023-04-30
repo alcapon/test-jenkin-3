@@ -22,6 +22,7 @@ pipeline {
     stage('SonarQubeScan') {
       steps {
         withSonarQubeEnv 'SonarScan4.8'
+        sh 'sh \'ls\''
       }
     }
 
