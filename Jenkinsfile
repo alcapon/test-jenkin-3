@@ -21,7 +21,7 @@ pipeline {
 
     stage('SonarQubeScan') {
       steps {
-        withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'xxxx')
+        withSonarQubeEnv 'SonarScan4.8'
       }
     }
 
