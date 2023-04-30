@@ -1,8 +1,5 @@
 pipeline {
-  agent any  
-  triggers {
-    githubPush()
-  }
+  agent any
   stages {
     stage('Checkout Code') {
       steps {
@@ -22,5 +19,14 @@ pipeline {
       }
     }
 
+    stage('SonarQubeScan') {
+      steps {
+        withSonarQubeEnv 'SonarScan'
+      }
+    }
+
+  }
+  triggers {
+    githubPush()
   }
 }
